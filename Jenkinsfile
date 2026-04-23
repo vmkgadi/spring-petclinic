@@ -8,7 +8,6 @@ pipeline {
                 sh 'mvn clean package -DskipTests'
             }
         }
-#Running
         stage('Run App') {
             steps {
                 sh 'java -jar target/*.jar --server.port=80'
