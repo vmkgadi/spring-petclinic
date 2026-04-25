@@ -8,11 +8,11 @@ pipeline {
                 sh 'mvn clean package -DskipTests'
             }
         }
-        stage('Run App') {
-            steps {
-                sh 'java -jar target/*.jar --server.port=80'
-            }
-        }
+        stage('Archive') {
+    steps {
+        archiveArtifacts artifacts: 'target/*.jar'
+    }
+}
 
     }
 }
