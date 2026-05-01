@@ -22,5 +22,15 @@ pipeline {
                 sh 'docker build -t vmkgadi/tech:$BUILD_NUMBER .'
             }
         } 
+        stage('Push Docker Image') {
+            steps {
+                // This step should not normally be used in your script. Consult the inline help for details.
+                withDockerRegistry(credentialsId: 'dock') {
+                sh 'docker push vmkgadi/tech:$BUILD_NUMBER'
+}
+                
+            }
+        } 
+        
     }
 }
