@@ -17,5 +17,10 @@ pipeline {
                 sh 'mvn test '
             }
         } 
+        stage('Build Docker') {
+            steps {
+                sh 'docker build -t vmkgadi/tech:$(BUILDNUMBER) '
+            }
+        } 
     }
 }
