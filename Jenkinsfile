@@ -23,13 +23,12 @@ pipeline {
             }
         } 
         stage('Push Docker Image') {
-            steps {
-                // This step should not normally be used in your script. Consult the inline help for details.
-                withDockerRegistry(credentialsId: 'dock') {
-                sh 'docker push vmkgadi/tech:$BUILD_NUMBER'
+    steps {
+        withDockerRegistry(credentialsId: 'dock', url: 'https://index.docker.io/v1/') {
+            sh 'docker push vmkgadi/tech:$BUILD_NUMBER'
+        }
+    }
 }
-                
-            }
         } 
         
     }
