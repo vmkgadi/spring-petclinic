@@ -19,7 +19,7 @@ pipeline {
         } 
         stage('Build Docker') {
             steps {
-                sh 'docker build -t vmkgadi/tech:$(BUILD_NUMBER) .'
+                sh 'docker build -t vmkgadi/tech:$BUILD_NUMBER .'
             }
         } 
     }
