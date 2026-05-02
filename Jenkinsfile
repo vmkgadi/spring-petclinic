@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IMAGE_NAME = "vmkfens/tech"
-        TAG = "${env.BUILD_NUMBER}
+        TAG = "${env.BUILD_NUMBER}"
     }
 
     stages {
