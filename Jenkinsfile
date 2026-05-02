@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "vmkfens/tech"
+        IMAGE_NAME = "vmkgadi/tech"
         TAG = "${env.BUILD_NUMBER}"
     }
 
